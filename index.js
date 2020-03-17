@@ -1,11 +1,11 @@
 function searchData() {
   // fetch('https://coronavirus-19-api.herokuapp.com/all')
-  fetch('https://coronavirus-19-api.herokuapp.com/countries')
+  // fetch('https://coronavirus-19-api.herokuapp.com/countries')
+  fetch('https://corona.lmao.ninja/countries')
     .then((response) => response.json())
     .then(json => console.log(json))
 }
 
-// const x=searchData();
 
 document.getElementById('searchfield').addEventListener('keyup', function () {
   let pattern = new RegExp(this.value, 'i');

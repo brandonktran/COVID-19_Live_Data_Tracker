@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <title>Document</title>
 </head>
 <body>
@@ -20,14 +21,15 @@
 
       function getData() {
         // fetch('https://coronavirus-19-api.herokuapp.com/all')
-        fetch('https://coronavirus-19-api.herokuapp.com/countries')
+        // fetch('https://coronavirus-19-api.herokuapp.com/countries')
+        fetch('https://corona.lmao.ninja/countries')
           .then((response) => response.json())
           .then((countries) => {
             let output = '';
             output += '<ul>';
             countries.forEach(function (country) {
               output += `
-                  <li>
+                  <li class = "data">
                     ${country.country}
                       <ul>
                        <li>Number of Cases: ${country.cases}</li>
