@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+      <h1>Coronavirus Data By Countries</h1>
+      <button id="getData">Get Data</button>
+  </div>
+  <hr>
+  <div id="response"></div>
+  <script>
+    document.getElementById('getData').addEventListener('click', getData);
+
+    function getData() {
+      // fetch('https://coronavirus-19-api.herokuapp.com/all')
+      fetch('https://coronavirus-19-api.herokuapp.com/countries')
+      .then(response => response.json())
+      // .then(json => console.log(json))
+      .then(countries => {
+        let output = 'Coro';
+        output += '<ul>';
+        countries.forEach(function (country) {
+          output += `
+                  <li>
+                    ${country.country}
+                      <ul>
+                       <li>Number of Cases: ${country.cases}</li>
+                       <li>Cases Today: ${country.todayCases}</li>
+                       <li>Total Deaths: ${country.deaths}</li>
+                       <li>Deaths Today: ${country.todayDeaths}</li>
+                       <li>Recovered: ${country.recovered}</li>
+                       <li>Active: ${country.active}</li>
+                       <li>Critical: ${country.critical}</li>
+                      </ul>
+                  </li>
+          `;
+        });
+        output += '</ul>'
+        document.getElementById("response").innerHTML = output;
+      });
+    }
+  </script>
+
+</body>
+</html>
