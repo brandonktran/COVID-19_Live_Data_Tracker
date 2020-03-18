@@ -1,4 +1,3 @@
-// JavaScript code
 function search_country() {
   let input = document.getElementById('searchbar').value
   input = input.toLowerCase();
@@ -17,6 +16,16 @@ function search_country() {
 document.getElementById('getData').addEventListener('click', getData);
 
 function getData() {
+  fetch('https://corona.lmao.ninja/all')
+    .then((response) => response.json())
+    .then((data) => {
+      // console.log(data['cases'])
+      let output = '<h3> Total Cases: ' + JSON.stringify(data['cases']) + '</h3>';
+      output += ' <h3> Total Deaths: ' + JSON.stringify(data['deaths']) + '</h3>';
+      output += ' <h3> Total Recovered: ' + JSON.stringify(data['recovered']) + '</h3>';
+      document.getElementById('main').innerHTML = output;
+    });
+
 
   fetch('https://corona.lmao.ninja/countries')
     .then((response) => response.json())
@@ -45,54 +54,4 @@ function getData() {
 
 }
 
-
-// function createNode(element) {
-//   return document.createElement(element);
-// }
-
-// function append(parent, el) {
-//   return parent.appendChild(el);
-// }
-
-// const ul = document.getElementById('countriesData');
-// const url = 'https://corona.lmao.ninja/countries';
-
-// function getData() {
-//   fetch(url)
-//     .then((resp) => resp.json())
-//     .then(function (countries) {
-//       return countries.forEach(function(country) {
-//         let li = createNode('li');
-//         li.innerHTML = ${country.country};
-//         //   img = createNode('img'),
-//         //   span = createNode('span');
-//         // img.src = data.picture.medium;
-//         // span.innerHTML = `${data.name.first} ${data.name.last}`;
-//         // append(li, img);
-//         // append(li, span);
-//         append(ul, li);
-//       })
-//     })
-//     .catch(function (error) {
-//       console.log(error);
-//     });
-// }
-
-
-
-
-
-
-        //   fetch('https://corona.lmao.ninja/all')
-        //     .then((response) => response.json())
-        //     .then(function (data) {
-        //       return console.log(data);
-        //     });
-        // }
-
-        // let x= getData();
-        // let y=x.cases;
-        // let outputMain = document.createElement('h3');
-        // let MainText = document.createTextNode(toString(y));     // Create a text node
-        // outputMain.appendChild(MainText);
-        // document.getElementById('main').innerHTML = outputMain.innerHTML;
+getData();

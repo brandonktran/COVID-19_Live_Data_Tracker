@@ -1,41 +1,43 @@
- #searchbar{
-     margin-left: 15%;
-     padding:15px;
-     border-radius: 10px;
-   }
+#searchbar{
+  margin-left: 2%;
+  padding:5px;
+  border-radius: 5px;
+}
 
-   input[type=text] {
-      width: 30%;
-      -webkit-transition: width 0.15s ease-in-out;
-      transition: width 0.15s ease-in-out;
-   }
+input[type=text] {
+  width: 30%;
+  -webkit-transition: width 0.15s ease-in-out;
+  transition: width 0.15s ease-in-out;
+}
 
-   /* When the input field gets focus,
-        change its width to 100% */
-   input[type=text]:focus {
-     width: 70%;
-   }
+/* When the input field gets focus,
+    change its width to 100% */
+input[type=text]:focus {
+  width: 70%;
+}
 
-  #list{
-    font-size:  1.5em;
-    margin-left: 90px;
-   }
-
-.animals{
-   display: list-item;
-  }
-
-
-
-.deaths{
-
-  color: red;
-
+#list{
+  font-size:  1.5em;
+  margin-left: 90px;
 }
 
 
+.deaths{
+  color: red;
+}
 
+.data {
+  border-style: solid;
+  padding: 2% 2% 2% 2%;
+  margin:2% 2% 2% 2%;
+  width: 23%;
+  display: inline-block;
+}
 
-/* .data {
-  color:yellow;
-} */
+.title {
+  margin:2% 2% 1% 2%;
+}
+
+#getData {
+  margin-left: 2%;
+}
