@@ -27,6 +27,7 @@ function getData() {
       let output = '<h3 class= "head"> Total Cases:<br> ' + formatNumber(data['cases']) + '</h3>';
       output += ' <h3 class= "head"> Total Deaths:<br> ' + formatNumber(data['deaths']) + '</h3>';
       output += ' <h3 class= "head"> Total Recovered:<br> ' + formatNumber(data['recovered']) + '</h3>';
+      output += ' <p class= "head"> Last Updated:<br> ' + data['updated'] + '</p>';
       document.getElementById('main').innerHTML = output;
     });
 
