@@ -4,50 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <title>Document</title>
+  <title>COVID-19 Tracker</title>
 </head>
 <body>
   <div>
-      <h1>Coronavirus Data By Countries</h1>
-      <button id="getData">Get Data</button>
-  </div>
-  <input id="searchfield"></input>
-  <div id="searchresult"></div>
+      <h1 class = "title">COVID-19 Tracker Data By Countries</h1>
+      <br>
+      <button id="getData">Refresh Data</button>
+      <input id="searchbar" onkeyup="search_country()" type="text" name="search" placeholder="Search countries..">
   <hr>
-  <div id="response"></div>
-
-  <script>
-    document.getElementById('getData').addEventListener('click', getData);
-
-      function getData() {
-        // fetch('https://coronavirus-19-api.herokuapp.com/all')
-        // fetch('https://coronavirus-19-api.herokuapp.com/countries')
-        fetch('https://corona.lmao.ninja/countries')
-          .then((response) => response.json())
-          .then((countries) => {
-            let output = '';
-            output += '<ul>';
-            countries.forEach(function (country) {
-              output += `
-                  <li class = "data">
-                    ${country.country}
-                      <ul>
-                       <li>Number of Cases: ${country.cases}</li>
-                       <li>Cases Today: ${country.todayCases}</li>
-                       <li>Total Deaths: ${country.deaths}</li>
-                       <li>Deaths Today: ${country.todayDeaths}</li>
-                       <li>Recovered: ${country.recovered}</li>
-                       <li>Active: ${country.active}</li>
-                       <li>Critical: ${country.critical}</li>
-                      </ul>
-                  </li>
-          `;
-            });
-            output += '</ul>';
-            document.getElementById('response').innerHTML = output;
-          });
-      }
-  </script>
+  <div id = "main"></div>
+  <div id="response">
+    <ul id= "countriesData"></ul>
+  </div>
   <script src="index.js"></script>
 </body>
 </html>
