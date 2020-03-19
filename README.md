@@ -7,6 +7,6 @@ A very simple UI utilizing the COVID-19 API (https://coronavirus-19-api.herokuap
 
 ![Image of when search](images/search.png)
 
-![Image of when search](demo.mov)
+
 
 
