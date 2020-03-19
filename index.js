@@ -20,19 +20,22 @@ function formatNumber(num) {
 document.getElementById('getData').addEventListener('click', getData);
 
 function getData() {
-  fetch('https://corona.lmao.ninja/all')
+  // fetch('https://corona.lmao.ninja/all')
+  fetch('https://coronavirus-19-api.herokuapp.com/all')
     .then((response) => response.json())
     .then((data) => {
       // console.log(data['cases'])
       let output = '<h3 class= "head"> Total Cases:<br> ' + formatNumber(data['cases']) + '</h3>';
       output += ' <h3 class= "head"> Total Deaths:<br> ' + formatNumber(data['deaths']) + '</h3>';
       output += ' <h3 class= "head"> Total Recovered:<br> ' + formatNumber(data['recovered']) + '</h3>';
+      output += ' <p class= "head"> Last Updated:<br> ' + data['updated'] + '</p>';
       document.getElementById('main').innerHTML = output;
     });
 
   // <li>Active: ${formatNumber(country.active)}</li>
 
-  fetch('https://corona.lmao.ninja/countries')
+  // fetch('https://corona.lmao.ninja/countries')
+  fetch('https://coronavirus-19-api.herokuapp.com/countries')
     .then((response) => response.json())
     .then((countries) => {
       let output = '';
