@@ -1,11 +1,13 @@
-/* body {
-  background-color: black;
-} */
+body {
+  background-color:whitesmoke;
+}
 
 #searchbar{
   margin-left: 2%;
   padding:5px;
   border-radius: 5px;
+  height: 30px;
+  font-size: 15px;
 }
 
 input[type=text] {
@@ -17,7 +19,7 @@ input[type=text] {
 /* When the input field gets focus,
     change its width to 100% */
 input[type=text]:focus {
-  width: 70%;
+  width: 40%;
 }
 
 .head {
@@ -27,6 +29,7 @@ input[type=text]:focus {
   position:relative;
   left:auto;
   right:auto;
+  font-size: 20px;
 }
 
 .deaths{
@@ -39,12 +42,17 @@ input[type=text]:focus {
   margin:2% 2% 2% 2%;
   width: 23%;
   display: inline-block;
+  font-size: 20px;
 }
 
 .title {
   margin:2% 2% 1% 2%;
+  font-size: 35px;
 }
 
 #getData {
   margin-left: 2%;
+  height: 30px;
+  border-color: black;
+  font-size: 12px;
 }

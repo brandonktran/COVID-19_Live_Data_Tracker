@@ -20,7 +20,8 @@ function formatNumber(num) {
 document.getElementById('getData').addEventListener('click', getData);
 
 function getData() {
-  fetch('https://corona.lmao.ninja/all')
+  // fetch('https://corona.lmao.ninja/all')
+  fetch('https://coronavirus-19-api.herokuapp.com/all')
     .then((response) => response.json())
     .then((data) => {
       // console.log(data['cases'])
@@ -33,7 +34,8 @@ function getData() {
 
   // <li>Active: ${formatNumber(country.active)}</li>
 
-  fetch('https://corona.lmao.ninja/countries')
+  // fetch('https://corona.lmao.ninja/countries')
+  fetch('https://coronavirus-19-api.herokuapp.com/countries')
     .then((response) => response.json())
     .then((countries) => {
       let output = '';
