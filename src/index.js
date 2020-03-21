@@ -61,4 +61,4 @@ function getData() {
 
 }
 
-getData();
+setInterval(getData, 1000);
