@@ -1,5 +1,10 @@
+* {
+  font-family: perpetua titling mt,Georgia,times new roman,Times,serif;
+}
+  /* font-family: Karla,Helvetica,Arial,sans-serif; */
+
 body {
-  background-color:whitesmoke;
+  background-color: #ebeded;
 }
 
 #searchbar{
@@ -51,6 +56,7 @@ input[type=text]:focus {
 .title {
   margin:2% 2% 1% 2%;
   font-size: 35px;
+  color: #e83c38;
 }
 
 #getData {
@@ -58,4 +64,8 @@ input[type=text]:focus {
   height: 30px;
   border-color: black;
   font-size: 12px;
+}
+
+#main {
+  color: #e83c38;
 }
