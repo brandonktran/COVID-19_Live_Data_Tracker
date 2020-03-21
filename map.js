@@ -27,7 +27,7 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(1000, 600).parent("canvasContainer");
+  canvas = createCanvas(800, 400).parent("canvasContainer");
   trainMap = mappa.tileMap(options);
   trainMap.overlay(canvas);
 
