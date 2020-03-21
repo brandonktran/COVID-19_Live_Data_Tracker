@@ -68,4 +68,10 @@ input[type=text]:focus {
 
 #main {
   color: #e83c38;
+  /* height: 800px; */
+  vertical-align: top;
+}
+
+.top {
+  display: inline-block;
 }
