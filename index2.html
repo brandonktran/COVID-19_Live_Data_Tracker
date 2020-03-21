@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>COVID-19 Tracker</title>
+</head>
+<body>
+  <div>
+      <h1 class = "title">COVID-19 Tracker Data By Countries</h1>
+      <br>
+      <button id="getData">Refresh Data</button>
+      <input id="searchbar" onkeyup="search_country()" type="text" name="search" placeholder="Search countries..">
+  <hr>
+  <div id = "main"></div>
+  <div id="response">
+    <ul id= "countriesData"></ul>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
