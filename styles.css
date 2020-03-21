@@ -9,6 +9,9 @@ body {
   height: 30px;
   font-size: 15px;
 }
+#canvasContainer {
+  display: inline-block;
+}
 
 input[type=text] {
   width: 30%;

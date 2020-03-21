@@ -8,7 +8,7 @@ function search_country() {
       x[i].style.display = "none";
     }
     else {
-      x[i].style.display = "inline-block";
+      x[i].style.display = "inline-block"
     }
   }
 }
