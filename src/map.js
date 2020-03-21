@@ -75,10 +75,12 @@ function processData() {
       }
     }
   }
-  let minD = sqrt(minValue);
-  let maxD = sqrt(maxValue);
+  let minD = Math.sqrt(minValue);
+  let maxD = Math.sqrt(maxValue);
 
   for (let country of data) {
-    country.diameter = map(sqrt(country.count), minD, maxD, 1, 20);
+    country.diameter = map(Math.sqrt(country.count), minD, maxD, 1, 20);
   }
 }
+
+setInterval(processData,1000);
