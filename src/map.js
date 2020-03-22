@@ -27,7 +27,7 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(800, 400).parent("canvasContainer");
+  canvas = createCanvas(900, 400).parent("canvasContainer");
   myMap = mappa.tileMap(options);
   myMap.overlay(canvas);
 

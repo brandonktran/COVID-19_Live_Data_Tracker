@@ -25,10 +25,10 @@ function getData() {
     .then((response) => response.json())
     .then((data) => {
       // console.log(data['cases'])
-      let output = '<h3 class= "head"> Total Cases:<br> ' + formatNumber(data['cases']) + '</h3>';
-      output += ' <h3 class= "head"> Total Deaths:<br> ' + formatNumber(data['deaths']) + '</h3>';
-      output += ' <h3 class= "head"> Total Recovered:<br> ' + formatNumber(data['recovered']) + '</h3>';
-      output += ' <p class= "head"> Last Updated:<br> ' + data['updated'] + '</p>';
+      let output = '<h3 class= "head" > Total Cases: ' + formatNumber(data['cases']) + '</h3>';
+      output += '<br> <h3 class= "head"> Total Deaths: ' + formatNumber(data['deaths']) + ' </h3>';
+      output += '<br> <h3 class= "head"> Total Recovered: ' + formatNumber(data['recovered']) + '</h3>';
+      output += '<br> <p class= "head"> Last Updated: ' + data['updated'] + '</p>';
       document.getElementById('main').innerHTML = output;
     });
 
