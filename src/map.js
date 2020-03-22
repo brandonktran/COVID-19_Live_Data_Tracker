@@ -1,10 +1,10 @@
 const mappa = new Mappa('Leaflet');
-let trainMap;
+let myMap;
 let canvas;
 
 let data = [];
 
-let currentColor;
+let Color;
 
 let output = [];
 
@@ -28,10 +28,10 @@ function preload() {
 
 function setup() {
   canvas = createCanvas(800, 400).parent("canvasContainer");
-  trainMap = mappa.tileMap(options);
-  trainMap.overlay(canvas);
+  myMap = mappa.tileMap(options);
+  myMap.overlay(canvas);
 
-  currentColor = color(255, 0, 200, 100); // default color
+  Color = color(147, 112, 219, 70); // default color
   processData();
 }
 
@@ -39,19 +39,19 @@ function setup() {
 function draw() {
   clear();
   for (let country of data) {
-    const pix = trainMap.latLngToPixel(country.lat, country.lon);
-    fill(currentColor);
-    const zoom = trainMap.zoom();
-    const scl = pow(2, zoom); // * sin(frameCount * 0.1);
-    ellipse(pix.x, pix.y, country.diameter * scl);
+    const pix = myMap.latLngToPixel(country.lat, country.lon);
+    fill(Color);
+    const zoom = myMap.zoom();
+    const scale = pow(2, zoom);
+    ellipse(pix.x, pix.y, country.diameter * scale);
   }
 }
 
 function processData() {
-  data = []; // always clear the array when picking a new type
+  data = [];
 
-  let maxValue = 0;
-  let minValue = Infinity;
+  let max = 0;
+  let min = Infinity;
 
   for (i = 0; i < output.length; i++) {
     let country = output[i].country.toLowerCase();
@@ -60,26 +60,27 @@ function processData() {
         console.log(country);
         let lat = countries[j]["Latitude (average)"];
         let lon = countries[j]["Longitude (average)"];
-        let count = output[i].cases;
+        let totalCases = output[i].cases;
         data.push({
           lat,
           lon,
-          count
+          totalCases
         });
-        if (count > maxValue) {
-          maxValue = count;
+        if (totalCases > max) {
+          max = totalCases;
         }
-        if (count < minValue) {
-          minValue = count;
+        if (totalCases < min) {
+          min = totalCases;
         }
       }
     }
   }
-  let minD = Math.sqrt(minValue);
-  let maxD = Math.sqrt(maxValue);
+  let new_min = Math.sqrt(min);
+  let new_max = Math.sqrt(max);
 
+  //remap number
   for (let country of data) {
-    country.diameter = map(Math.sqrt(country.count), minD, maxD, 1, 20);
+    country.diameter = map(Math.sqrt(country.totalCases), new_min, new_max, 1, 20);
   }
 }
 
