@@ -78,3 +78,13 @@ input[type=text]:focus {
 .top {
   display: inline-block;
 }
+
+#time {
+  font-size: 20px;
+}
+
+#typeData {
+  height: 30px;
+  border-color: black;
+  margin-left: 2%;
+}
