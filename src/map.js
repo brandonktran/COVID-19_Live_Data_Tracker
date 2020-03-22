@@ -27,9 +27,11 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(800, 400).parent("canvasContainer");
+  canvas = createCanvas(900, 400).parent("canvasContainer");
   myMap = mappa.tileMap(options);
   myMap.overlay(canvas);
+
+  let typeData = document.getElementById("typeData"); // get the DOM element from the HTML
 
   Color = color(147, 112, 219, 70); // default color
   processData();
@@ -53,6 +55,21 @@ function processData() {
   let max = 0;
   let min = Infinity;
 
+
+  let type = typeData.options[typeData.selectedIndex].value
+
+  switch (type) {
+    case 'cases':
+      Color = color(147, 112, 219, 70);
+      break;
+    case 'deaths':
+      Color = color(255, 0, 200, 100);
+      break;
+    case 'recovered':
+      Color = color(64, 250, 200, 100);
+      break;
+  }
+
   for (i = 0; i < output.length; i++) {
     let country = output[i].country.toLowerCase();
     for (let j = 0; j < countries.length; j++) {
@@ -60,7 +77,7 @@ function processData() {
         console.log(country);
         let lat = countries[j]["Latitude (average)"];
         let lon = countries[j]["Longitude (average)"];
-        let totalCases = output[i].cases;
+        let totalCases = output[i][type];
         data.push({
           lat,
           lon,

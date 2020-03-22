@@ -31,13 +31,13 @@ input[type=text]:focus {
 }
 
 .head {
-  display: inline-block;
+  display: inline;
   /* width: 28%; */
   padding: 2% 2% 1% 2%;
   position:relative;
-  left:auto;
-  right:auto;
-  font-size: 20px;
+  /* left:auto;
+  right:auto; */
+  font-size: 30px;
 }
 
 .deaths{
@@ -70,8 +70,21 @@ input[type=text]:focus {
   color: #e83c38;
   /* height: 800px; */
   vertical-align: top;
+  font-size: 80px;
+  width: 500px;
+  text-align: center;
 }
 
 .top {
   display: inline-block;
+}
+
+#time {
+  font-size: 20px;
+}
+
+#typeData {
+  height: 30px;
+  border-color: black;
+  margin-left: 2%;
 }
