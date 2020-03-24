@@ -4,6 +4,7 @@ A very simple UI utilizing the COVID-19 API (https://coronavirus-19-api.herokuap
 
 
 Some gifs demonstrating how the website works:
+
 <img src="images/map1.gif" alt="HTML5 Icon" width="420">  <img src="images/search1.gif" alt="HTML5 Icon" width="420">
 
 
