@@ -8,7 +8,7 @@ Some gifs demonstrating how the website works:
 <img src="images/map1.gif" alt="HTML5 Icon" width="420">  <img src="images/search1.gif" alt="HTML5 Icon" width="420">
 
 
-<img src="images/sample.png" alt="HTML5 Icon" width="940">
+<img src="images/website.png" alt="HTML5 Icon" width="940">
 
 
 
