@@ -63,7 +63,7 @@ input[type=text]:focus {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 500px) {
   .data {
     width: 80%;
   }
@@ -78,8 +78,8 @@ input[type=text]:focus {
 
 #getData {
   margin-left: 2%;
-  padding-bottom:0.4%;
-  padding-top: 0.4%;
+  /* padding-bottom:0.4%;
+  padding-top: 0.4%; */
   height: 4vh;
   border-color: black;
   font-size: calc(4px + 1vw);
