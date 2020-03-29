@@ -27,7 +27,7 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(windowWidth/1.65, windowHeight/2).parent("canvasContainer");
+  canvas = createCanvas(windowWidth/1.65, windowWidth/3.2).parent("canvasContainer");
   myMap = mappa.tileMap(options);
   myMap.overlay(canvas);
 
@@ -101,4 +101,6 @@ function processData() {
   }
 }
 
+
 setInterval(processData,1000);
+// setInterval(setup, 1000);
