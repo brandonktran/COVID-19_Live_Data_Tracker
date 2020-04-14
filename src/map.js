@@ -29,6 +29,7 @@ function preload() {
 function setup() {
   canvas = createCanvas(windowWidth/1.65, windowWidth/3.2).parent("canvasContainer");
   myMap = mappa.tileMap(options);
+  // myMap.options.zoom = 1.5;
   myMap.overlay(canvas);
 
   let typeData = document.getElementById("typeData"); // get the DOM element from the HTML
@@ -49,12 +50,16 @@ function draw() {
   }
 }
 
+// function windowResized() {
+//   resizeCanvas(windowWidth / 2, windowHeight / 2);
+// }
+
+
 function processData() {
   data = [];
 
   let max = 0;
   let min = Infinity;
-
 
   let type = typeData.options[typeData.selectedIndex].value
 
@@ -103,4 +108,3 @@ function processData() {
 
 
 setInterval(processData,1000);
-// setInterval(setup, 1000);
