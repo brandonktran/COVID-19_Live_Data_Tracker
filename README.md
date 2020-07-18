@@ -7,7 +7,7 @@ The webpage can be found at https://brandonktran.github.io/COVID-19_Live_Data_Tr
 
 Some gifs to demonstrate the webpage:
 
-<img src="images/map1.gif" alt="HTML5 Icon" width="50%">  <img src="images/search1.gif" alt="HTML5 Icon" width="50%">
+<img src="images/map1.gif" alt="HTML5 Icon" width="49%">  <img src="images/search1.gif" alt="HTML5 Icon" width="49%">
 
 
 <img src="images/website.png" alt="HTML5 Icon" width="100%">
